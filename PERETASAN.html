@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Keamanan Bank - Peringatan</title>
+    <style>
+        body {
+            background-color: black;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        #hacker-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJmZzR6ZzR6ZzR6ZzR6ZzR6ZzR6ZzR6ZzR6ZzR6ZzR6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/3knKct3fGqxhK/giphy.gif') no-repeat center center;
+            background-size: cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .container {
+            border: 2px solid #0f0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 20px #0f0;
+        }
+
+        h1 { font-size: 2rem; color: red; text-shadow: 0 0 10px red; }
+        .warning { color: yellow; font-weight: bold; }
+        .amount { color: white; font-size: 1.5rem; text-decoration: line-through red; }
+        
+        #status-text {
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        /* Animasi berkedip */
+        .blink { animation: blinker 1s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
+    </style>
+</head>
+<body>
+
+    <div id="hacker-bg"></div>
+
+    <div class="container">
+        <h1 class="blink">SYSTEM BREACHED!</h1>
+        <p class="warning">MENGHUBUNGKAN KE SERVER BANK...</p>
+        <div id="log"></div>
+        <hr>
+        <p>Saldo Anda Saat Ini: <b style="color: red;">Rp 0</b></p>
+        <p class="warning">MENGURAS SEMUA DANA KE REKENING LUAR NEGERI...</p>
+        <h2 style="color: red;">DANA BERHASIL DIKIRIM! 💸</h2>
+        <p style="color: #0f0;">Status: Anonymous</p>
+    </div>
+
+    <script>
+        const logs = [
+            "> Initializing exploit...",
+            "> Bypassing firewall...",
+            "> Accessing database...",
+            "> Transferring funds...",
+            "> Deleting transaction history...",
+            "> COMPLETED."
+        ];
+        
+        let i = 0;
+        function showLogs() {
+            if (i < logs.length) {
+                document.getElementById("log").innerHTML += logs[i] + "<br>";
+                i++;
+                setTimeout(showLogs, 800);
+            }
+        }
+        showLogs();
+    </script>
+</body>
+</html>
